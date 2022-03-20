@@ -1,0 +1,135 @@
+body {
+	background: #e2e2e2;
+}
+
+.bg-primary {
+	background: rgb(0, 128, 128) !important;
+}
+
+.menu-items {
+	margin-left: 130vh;
+}
+
+.banner {
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+		url("../image/smartContactManagerHome.jpg");
+	width: auto;
+	height: 93vh;
+	color: white;
+	background-size: cover;
+}
+
+.my-card {
+	background: #FFFFFF;
+	padding: 30px;
+}
+
+.my-form-control {
+	padding: 10px;
+	/* font-family: cursive; */
+}
+
+.profile-image {
+	width: 10vh;
+	height: 10vh;
+}
+
+.sidebar {
+	width: 18%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding-top: 30px;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+		height: 100vh;
+		position: fixed;
+		width: 80% !important;
+		background: white;
+		padding-top: 20px;
+	}
+	.content {
+		margin-top: 15% !important;
+		margin-left: 0% !important;
+	}
+}
+
+.sidebar a:hover {
+	background: #e2e2e2;
+}
+
+.sidebar .divider {
+	height: .5px;
+	width: 100%;
+}
+
+.cross-sidebar {
+	cursor: pointer;
+	position: absolute;
+	right: 35px;
+	top: 0;
+	font-size: x-large;
+}
+
+.content {
+	margin-left: 20%;
+	margin-top: 4%;
+}
+
+.pic_list {
+	height: 35px;
+	width: 35px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.contact_detail_image {
+	width: 200px;
+	height: 200px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.my-form-control {
+	padding: 10px;
+}
+
+.dashboard-welcome-text {
+	color: gray;
+	font-family: cursive;
+	font-weight: bolder;
+}
+
+.dashboard-info-text {
+	color: gray;
+	font-style: italic;
+}
+
+.search-container{
+	position: relative;
+}
+
+.search-result{
+	position: absolute;
+	display: none;
+	background: white;
+	padding: 10px;
+	border: 1px solid gray;
+	width: 70%;
+	margin-right: 2%;
+}
+
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="card">
+				<div class="card-body">
+					<div class="container text-center">
+						<img class="contact_detail_image" alt="SmartContactManager"
+							th:src="@{'/image/smartContactManagerHome.jpg'}">
+					</div>
+					<h1 class="text-center dashboard-welcome-text">
+						Welcome <span th:text="${user.name}"></span>
+					</h1>
+					<p class="text-center dashboard-info-text">
+						You can now start adding contacts.
+					</p>
+					<div class="container">
+						<a class="btn btn-primary btn-sm col-12" th:href="@{'/user/add-contact/'}">Add Contact</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

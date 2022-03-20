@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${title}"></title>
+</head>
+<body>
+	<section>
+		<div class="my-card col-md-6 offset-md-3">
+			<h1 style="text-align: center;">
+				<span th:if="${title} == addContact">Add Contact</span>
+				<span th:if="${title} == updateContact">Update Contact</span>
+			</h1>
+			<div class="container">
+				
+				<div th:if="${session.message}" th:classappend="${'alert-' + session.message.type}" class="alert" role="alert">
+				  <span th:text="${session.message.content}"></span>
+				  <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				</div>
+					<div class="row">
+						<form class="form-group" 
+						th:object=${contact}
+						enctype="multipart/form-data"
+						th:action="${title}=='addContact' ? @{/user/processAddContact} : @{/user/processUpdateContact}" method="post">
+							
+							<div class="form=group my-form-control" style="display: none;">
+								<input type="text" name="cId" th:value="${contact.cId}">
+							</div>
+							
+							<div class="form-group my-form-control">
+								<label>Name</label>
+								<input type="text" class="form-control my-form-control" placeholder="Enter Name"
+								name="name" th:value="${contact.name}">
+							</div>
+							
+							<div class="form-group my-form-control">
+								<label>Nick Name</label>
+								<input type="text" class="form-control my-form-control" placeholder="Enter Nick Name"
+								name="nickname" th:value="${contact.nickname}">
+							</div>
+							
+							<div class="form-group my-form-control">
+								<label>Phone No.</label>
+								<input type="number" maxlength=10 class="form-control " placeholder="Enter Phone"
+								name="phone" th:value="${contact.phone}">
+							</div>
+							<div class="form-group my-form-control">
+								<label>Email</label>
+								<input type="email" class="form-control" placeholder="Enter Email"
+								name="email" th:value="${contact.email}">
+								
+							</div>
+							
+							<div class="form-group my-form-control">
+								<label>Work</label>
+								<input type="text" class="form-control" placeholder="Enter Work"
+								name="work" th:value="${contact.work}">
+							</div>
+							
+							<div class="form-group my-form-control">
+								<label>Description</label>
+								<textarea class="form-control" placeholder="Enter Description"
+								name="description" th:text="${contact.description}"></textarea>
+							</div>
+											
+							<div class="custom-file my-form-control">
+								<input type="file" name="profileImage">
+							</div>
+							
+							<div class="form-group my-form-control" style="text-align: center;">
+								<button type="submit" class="btn btn-outline-success" 
+								>Save</button>
+							
+							</div>
+							
+						</form>
+					</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

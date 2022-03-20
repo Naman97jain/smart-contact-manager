@@ -1,0 +1,5 @@
+Custom things with Spring security login form:
+1. loginPage("/anynamehere")
+2. loginProcessingUrl("/anyUrlHere")
+3. defaultSuccessUrl("/anyUrlHere")
+4. failureUrl("/anyUrlHere")
